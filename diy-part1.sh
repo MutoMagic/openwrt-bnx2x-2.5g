@@ -16,3 +16,8 @@
 # Add a feed source
 #echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
+
+mv target openwrt/target
+mv tools openwrt/tools
+wget https://downloads.openwrt.org/releases/23.05.2/targets/x86/64/llvm-bpf-15.0.7.Linux-x86_64.tar.xz -P openwrt
+tar -xvaf openwrt/llvm-bpf-15.0.7.Linux-x86_64.tar.xz

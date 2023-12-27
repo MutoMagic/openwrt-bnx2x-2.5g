@@ -1,0 +1,26 @@
+# Put your custom commands here that should be executed once
+# the system init finished. By default this file does nothing.
+
+# 风扇<1200rpm 静音
+# nct6791-isa-0290
+# pwm1_auto_point2_temp 30000
+# pwm2_auto_point1_temp 20000
+# pwm2_auto_point2_temp 65000
+# pwm2_auto_point1_pwm 51
+# pwm2_auto_point2_pwm 178
+# @see: https://wiki.archlinux.org/index.php?title=Fan_speed_control
+# @see: https://docs.kernel.org/hwmon/nct6775.html
+HWMON=$(printf /sys/devices/platform/nct6775.656/hwmon/[[:print:]]*)
+CPU02=`cat $HWMON/pwm2_auto_point2_temp`
+CPU11=`cat $HWMON/pwm2_auto_point1_pwm`
+CPU12=`cat $HWMON/pwm2_auto_point2_pwm`
+# 后方风扇
+echo $CPU02 > $HWMON/pwm1_auto_point2_temp
+echo $CPU11 > $HWMON/pwm1_auto_point1_pwm
+echo $CPU12 > $HWMON/pwm1_auto_point2_pwm
+# 侧面风扇
+echo $CPU02 > $HWMON/pwm3_auto_point2_temp
+echo $CPU11 > $HWMON/pwm3_auto_point1_pwm
+echo $CPU12 > $HWMON/pwm3_auto_point2_pwm
+
+exit 0
