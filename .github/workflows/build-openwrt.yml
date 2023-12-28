@@ -63,8 +63,9 @@ jobs:
     - name: Clone source code
       working-directory: /workdir
       run: |
+        rm -rf openwrt
         df -hT $PWD
-        [ -e openwrt ] && rm -rf openwrt & git clone $REPO_URL -b $REPO_BRANCH openwrt
+        git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
     - name: Load custom feeds
