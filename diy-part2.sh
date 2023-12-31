@@ -15,5 +15,5 @@ sed -i 's/192.168.1.1/192.168.0.1/g' package/base-files/files/bin/config_generat
 
 mv target openwrt/target
 mv tools openwrt/tools
-wget https://downloads.openwrt.org/releases/23.05.2/targets/x86/64/llvm-bpf-15.0.7.Linux-x86_64.tar.xz -P openwrt
-tar -xvaf openwrt/llvm-bpf-15.0.7.Linux-x86_64.tar.xz
+#wget https://downloads.openwrt.org/releases/23.05.2/targets/x86/64/llvm-bpf-15.0.7.Linux-x86_64.tar.xz -P openwrt
+#tar -xvaf openwrt/llvm-bpf-15.0.7.Linux-x86_64.tar.xz
