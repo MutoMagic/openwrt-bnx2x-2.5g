@@ -115,8 +115,8 @@ jobs:
     needs: [build-00, build-01]
 
     steps:
-    - name: Clean
-      run: cd openwrt && make clean
+    - name: Cleaning up
+      run: cd openwrt && make dirclean
 
     - name: Compile the firmware
       id: compile
