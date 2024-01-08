@@ -30,8 +30,8 @@ env:
   CONFIG_FILE: .config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
-  UPLOAD_BIN_DIR: false
-  UPLOAD_FIRMWARE: true
+  UPLOAD_BIN_DIR: true
+  UPLOAD_FIRMWARE: false
   UPLOAD_COWTRANSFER: false
   UPLOAD_WETRANSFER: false
   UPLOAD_RELEASE: false
@@ -142,7 +142,7 @@ jobs:
       uses: actions/upload-artifact@main
       if: github.job.build.steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true'
       with:
-        name: OpenWrt_bin${{ github.env.DEVICE_NAME }}${{ github.env.FILE_DATE }}
+        name: OpenWrt_bin$DEVICE_NAME$FILE_DATE
         path: openwrt/bin
 
     - name: Organize files
@@ -158,8 +158,8 @@ jobs:
       uses: actions/upload-artifact@main
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
-        name: OpenWrt_firmware${{ github.env.DEVICE_NAME }}${{ github.env.FILE_DATE }}
-        path: ${{ github.env.FIRMWARE }}
+        name: OpenWrt_firmware$DEVICE_NAME$FILE_DATE
+        path: $FIRMWARE
 
     - name: Upload firmware to cowtransfer
       id: cowtransfer
@@ -197,7 +197,7 @@ jobs:
       with:
         tag_name: ${{ steps.tag.outputs.release_tag }}
         body_path: release.txt
-        files: ${{ github.env.FIRMWARE }}/*
+        files: $FIRMWARE/*
 
     - name: Delete workflow runs
       uses: GitRML/delete-workflow-runs@main
