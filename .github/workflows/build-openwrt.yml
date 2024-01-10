@@ -161,7 +161,7 @@ jobs:
       if: steps.compile.outputs.status == 'success' && !cancelled()
       run: |
         cd openwrt/bin/targets/*/*
-        tar -Jcvf packages.tar.xz packages
+        [ -e packages ] && tar -Jcvf packages.tar.xz packages
         rm -rf packages
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "status=success" >> $GITHUB_OUTPUT
