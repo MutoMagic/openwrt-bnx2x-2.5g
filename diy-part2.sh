@@ -13,4 +13,5 @@
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.0.1/g' package/base-files/files/bin/config_generate
 
-cp -rf $GITHUB_WORKSPACE/target . # BCM57810S驱动2.5G补丁
+# BCM57810S驱动2.5G补丁
+cp -rf $GITHUB_WORKSPACE/target .
