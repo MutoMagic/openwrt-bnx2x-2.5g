@@ -21,7 +21,7 @@ on:
       tag:
         description: 'REPO_BRANCH'
         required: true
-        default: 'v23.05.2'
+        default: 'v23.05.3'
 
 env:
   REPO_URL: https://github.com/openwrt/openwrt
