@@ -1,38 +1,16 @@
 # Put your custom commands here that should be executed once
 # the system init finished. By default this file does nothing.
 
-# 任何风扇<1200rpm都属于静音
+# 任何风扇>1200rpm都很吵
 # nct6791-isa-0290
-# pwm1_auto_point1_temp 30000
-# pwm1_auto_point2_temp 70000
-# pwm1_auto_point1_pwm 153
-# pwm1_auto_point1_pwm 255
-# pwm2_auto_point1_temp 20000
-# pwm2_auto_point2_temp 65000
-# pwm2_auto_point1_pwm 51
-# pwm2_auto_point2_pwm 178
 # @see: https://wiki.archlinux.org/index.php?title=Fan_speed_control
 # @see: https://docs.kernel.org/hwmon/nct6775.html
 HWMON=$(printf /sys/devices/platform/nct6775.656/hwmon/[[:print:]]*)
-CPU_T2=`cat $HWMON/pwm2_auto_point2_temp`
-CPU_P1=`cat $HWMON/pwm2_auto_point1_pwm`
-CPU_P2=`cat $HWMON/pwm2_auto_point2_pwm`
-# 后方风扇
-echo $CPU_T2 > $HWMON/pwm1_auto_point2_temp
-echo $CPU_P1 > $HWMON/pwm1_auto_point1_pwm
-echo $CPU_P2 > $HWMON/pwm1_auto_point2_pwm
+echo 51 > $HWMON/pwm3_auto_point1_pwm
 
-#opkg install kmod-nft-bridge
-#nft add chain inet fw4 user_prerouting { type filter hook prerouting priority -1\; }
-#nft add rule inet fw4 user_prerouting meta iifname "br-10000_iptv" ip protocol igmp ip ttl set 2 #meta nftrace set 1
-#nft add chain inet fw4 user_output { type filter hook output priority -1\; }
 nft add table bridge br0
-#nft add chain bridge br0 user_prerouting { type filter hook prerouting priority 0\; }
 nft add chain bridge br0 user_forward { type filter hook forward priority 0\; }
 nft add rule bridge br0 user_forward meta oifname "eth3.40" drop
 nft add rule bridge br0 user_forward meta iifname "eth3.40" oifname "eth3.43" drop
-#nft add chain bridge br0 user_input { type filter hook input priority 0\; }
-#nft add chain bridge br0 user_output { type filter hook output priority 0\; }
-#nft add chain bridge br0 user_postrouting { type filter hook postrouting priority 0\; }
 
 exit 0
