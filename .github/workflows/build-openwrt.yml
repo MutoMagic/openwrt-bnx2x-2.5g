@@ -38,7 +38,7 @@ jobs:
     runs-on: self-hosted
 
     steps:
-    - name: Initialization environment
+    - name: Initialization environment PART.1
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
@@ -54,7 +54,7 @@ jobs:
     needs: preload
 
     steps:
-    - name: Initialization environment
+    - name: Initialization environment PART.2
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
@@ -92,7 +92,7 @@ jobs:
 
     steps:
     - name: Erase
-      run: cd openwrt && make dirclean
+      run: cd openwrt && make distclean
 
     - name: Load custom feeds
       run: |
