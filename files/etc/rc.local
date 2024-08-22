@@ -8,9 +8,4 @@
 HWMON=$(printf /sys/devices/platform/nct6775.656/hwmon/[[:print:]]*)
 echo 51 > $HWMON/pwm3_auto_point1_pwm
 
-nft add table bridge br0
-nft add chain bridge br0 user_forward { type filter hook forward priority 0\; }
-nft add rule bridge br0 user_forward meta oifname "eth3.40" drop
-nft add rule bridge br0 user_forward meta iifname "eth3.40" oifname "eth3.43" drop
-
 exit 0

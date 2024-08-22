@@ -11,7 +11,7 @@
 #
 
 # Modify default IP
-sed -i 's/192.168.1.1/192.168.0.254/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/10.0.1.254/g' package/base-files/files/bin/config_generate
 
 # BCM57810S驱动2.5G补丁
 cp -rf $GITHUB_WORKSPACE/target .
