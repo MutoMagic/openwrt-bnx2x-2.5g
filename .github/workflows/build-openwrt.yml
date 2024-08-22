@@ -78,9 +78,9 @@ jobs:
       working-directory: ~/workdir
       run: |
         rm -rf openwrt
-        df -hT $PWD
+        df -hT $(pwd)
         git clone $REPO_URL -b $REPO_BRANCH openwrt
-        ln -sf $PWD/openwrt $GITHUB_WORKSPACE/openwrt
+        ln -sf $(pwd)/openwrt $GITHUB_WORKSPACE/openwrt
 
   build:
     runs-on: self-hosted
