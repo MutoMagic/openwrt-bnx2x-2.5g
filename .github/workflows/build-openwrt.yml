@@ -46,8 +46,8 @@ jobs:
         sudo -E apt-get -qq install git
         sudo -E apt-get -qq clean
         sudo timedatectl set-timezone "$TZ"
-        sudo mkdir -p ~/workdir
-        sudo chown $USER:$GROUPS ~/workdir
+        sudo mkdir -p /workdir
+        sudo chown $USER:$GROUPS /workdir
 
   init:
     runs-on: self-hosted
@@ -75,7 +75,7 @@ jobs:
       uses: actions/checkout@main
 
     - name: Clone source code
-      working-directory: $HOME/workdir
+      working-directory: /workdir
       run: |
         rm -rf openwrt
         df -hT $PWD
