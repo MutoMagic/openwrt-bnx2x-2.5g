@@ -13,7 +13,5 @@
 # Modify default IP
 sed -i 's/192.168.1.1/10.0.1.254/g' package/base-files/files/bin/config_generate
 
-# https://www.dslreports.com/forum/r32230041-Internet-Bypassing-the-HH3K-up-to-2-5Gbps-using-a-BCM57810S-NIC
-# https://github.com/openwrt/packages/issues/23621
 cp -r $GITHUB_WORKSPACE/target .
 #cp -r $GITHUB_WORKSPACE/feeds .

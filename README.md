@@ -1,5 +1,13 @@
 **English** | [中文](https://p3terx.com/archives/build-openwrt-with-github-actions.html)
 
+# 一些必要的说明
+
+[bcm57810s修改2.5g教程](https://www.dslreports.com/forum/r32230041-Internet-Bypassing-the-HH3K-up-to-2-5Gbps-using-a-BCM57810S-NIC)
+
+[因libpfring导致的编译失败](https://github.com/openwrt/packages/issues/23621)仅在23.05.3中出现，自23.05.4后官方就修复了，相关补丁随时可能删除。
+
+计划集成[LuCI support for Turbo ACC (SFE)](https://github.com/lllrrr/luci-app-sfe)，开启shortcut-fe对小包转发有很大提升[与ros不分秋色](https://www.youtube.com/watch?v=ATTCCnTEqH0)。至于[bbr](https://aws.amazon.com/cn/blogs/china/talking-about-network-optimization-from-the-flow-control-algorithm/)，当作软路由使用时不建议开启。
+
 # Actions-OpenWrt
 
 [![LICENSE](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square&label=LICENSE)](https://github.com/P3TERX/Actions-OpenWrt/blob/master/LICENSE)
