@@ -4,7 +4,7 @@
 
 [bcm57810s修改2.5g教程](https://www.dslreports.com/forum/r32230041-Internet-Bypassing-the-HH3K-up-to-2-5Gbps-using-a-BCM57810S-NIC)
 
-[因libpfring导致的编译失败](https://github.com/openwrt/packages/issues/23621)仅在23.05.3中出现，自23.05.4后官方就修复了，相关补丁随时可能删除。
+[因libpfring导致的编译失败](https://github.com/openwrt/packages/issues/23621)仅在23.05.3中出现，自23.05.4后官方就修复了。
 
 计划集成[LuCI support for Turbo ACC (SFE)](https://github.com/lllrrr/luci-app-sfe)，开启shortcut-fe对小包转发有很大提升[与ros不分秋色](https://www.youtube.com/watch?v=ATTCCnTEqH0)，在[长肥网络](https://cloud.tencent.com/developer/article/1383232)中开启[bbr](https://aws.amazon.com/cn/blogs/china/talking-about-network-optimization-from-the-flow-control-algorithm/)才会有明显提升。
 
