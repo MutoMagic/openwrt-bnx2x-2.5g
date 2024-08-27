@@ -8,7 +8,7 @@
 
 `CONFIG_PACKAGE_luci-proto-bonding=y`的前提是`CONFIG_PACKAGE_kmod-tls=y`否则只能`=m`。
 
-集成[LuCI support for Turbo ACC (SFE)](https://github.com/lllrrr/luci-app-sfe)，开启shortcut-fe对小包转发有很大提升[与ros不分秋色](https://www.youtube.com/watch?v=ATTCCnTEqH0)，至于[bbr](https://aws.amazon.com/cn/blogs/china/talking-about-network-optimization-from-the-flow-control-algorithm/)在[长肥网络](https://cloud.tencent.com/developer/article/1383232)中开启才会有明显提升。
+预集成[LuCI support for Turbo ACC (SFE)](https://github.com/lllrrr/luci-app-sfe)和[shortcut-fe](https://git.codelinaro.org/clo/qsdk/oss/lklm/shortcut-fe/-/tree/697977d8d0ccf0ab596e5692d08608a75dd7f33d)，源码来自[coolsnowwolf/lede](https://github.com/coolsnowwolf/lede)和[immortalwrt](https://github.com/immortalwrt/immortalwrt)，开启shortcut-fe对小包转发有很大提升[与ros不分秋色](https://www.youtube.com/watch?v=ATTCCnTEqH0)，至于[bbr](https://aws.amazon.com/cn/blogs/china/talking-about-network-optimization-from-the-flow-control-algorithm/)在[长肥网络](https://cloud.tencent.com/developer/article/1383232)中开启才会有明显提升。
 
 # Actions-OpenWrt
 
