@@ -14,4 +14,4 @@
 sed -i 's/192.168.1.1/10.0.1.254/g' package/base-files/files/bin/config_generate
 
 cp -r $GITHUB_WORKSPACE/target .
-#cp -r $GITHUB_WORKSPACE/feeds .
+cp -r $GITHUB_WORKSPACE/package .
