@@ -6,6 +6,6 @@
 # @see: https://wiki.archlinux.org/index.php?title=Fan_speed_control
 # @see: https://docs.kernel.org/hwmon/nct6775.html
 HWMON=$(printf /sys/devices/platform/nct6775.656/hwmon/[[:print:]]*)
-echo 51 > $HWMON/pwm3_auto_point1_pwm
+echo 0 > $HWMON/pwm3_auto_point1_pwm
 
 exit 0
