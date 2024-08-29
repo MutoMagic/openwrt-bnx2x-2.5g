@@ -81,9 +81,9 @@ Signed-off-by: Zhi Chen <zhichen@codeaurora.org>
  #else
 --- a/include/net/netns/conntrack.h
 +++ b/include/net/netns/conntrack.h
-@@ -105,6 +105,9 @@ struct netns_ct {
- 	u8			sysctl_checksum;
+@@ -112,6 +112,9 @@ struct netns_ct {
  
+ 	struct ct_pcpu __percpu *pcpu_lists;
  	struct ip_conntrack_stat __percpu *stat;
 +#ifdef CONFIG_NF_CONNTRACK_CHAIN_EVENTS
 +	struct atomic_notifier_head nf_conntrack_chain;
