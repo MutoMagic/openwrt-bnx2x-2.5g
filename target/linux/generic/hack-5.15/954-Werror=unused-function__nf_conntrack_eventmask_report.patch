@@ -1,0 +1,18 @@
+--- a/net/netfilter/nf_conntrack_ecache.c
++++ b/net/netfilter/nf_conntrack_ecache.c
+@@ -133,6 +133,7 @@ static void ecache_work(struct work_stru
+ 		schedule_delayed_work(&cnet->ecache_dwork, delay);
+ }
+ 
++#ifndef CONFIG_NF_CONNTRACK_CHAIN_EVENTS
+ static int __nf_conntrack_eventmask_report(struct nf_conntrack_ecache *e,
+ 					   const unsigned int events,
+ 					   const unsigned long missed,
+@@ -180,6 +181,7 @@ static int __nf_conntrack_eventmask_repo
+ 
+ 	return ret;
+ }
++#endif
+ 
+ #ifdef CONFIG_NF_CONNTRACK_CHAIN_EVENTS
+ int nf_conntrack_eventmask_report(unsigned int eventmask, struct nf_conn *ct,
