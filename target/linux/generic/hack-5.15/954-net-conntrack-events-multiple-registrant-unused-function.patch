@@ -16,3 +16,21 @@
  
  #ifdef CONFIG_NF_CONNTRACK_CHAIN_EVENTS
  int nf_conntrack_eventmask_report(unsigned int eventmask, struct nf_conn *ct,
+--- a/net/netfilter/nf_conntrack_netlink.c
++++ b/net/netfilter/nf_conntrack_netlink.c
+@@ -3119,6 +3119,7 @@ nla_put_failure:
+ }
+ 
+ #ifdef CONFIG_NF_CONNTRACK_EVENTS
++#ifndef CONFIG_NF_CONNTRACK_CHAIN_EVENTS
+ static int
+ ctnetlink_expect_event(unsigned int events, const struct nf_exp_event *item)
+ {
+@@ -3168,6 +3169,7 @@ errout:
+ 	return 0;
+ }
+ #endif
++#endif
+ static int ctnetlink_exp_done(struct netlink_callback *cb)
+ {
+ 	if (cb->args[1])
