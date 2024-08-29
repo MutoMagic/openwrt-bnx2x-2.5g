@@ -61,8 +61,8 @@
  	default y
 --- a/net/bridge/br_if.c
 +++ b/net/bridge/br_if.c
-@@ -768,6 +768,28 @@ void br_port_flags_change(struct net_bri
- 		br_offload_port_state(p);
+@@ -774,6 +774,28 @@ void br_port_flags_change(struct net_bri
+ 		br_recalculate_neigh_suppress_enabled(br);
  }
  
 +void br_dev_update_stats(struct net_device *dev,
