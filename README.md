@@ -4,7 +4,7 @@
 
 [bcm57810s修改2.5g教程](https://www.dslreports.com/forum/r32230041-Internet-Bypassing-the-HH3K-up-to-2-5Gbps-using-a-BCM57810S-NIC)
 
-[因libpfring导致的编译失败](https://github.com/openwrt/packages/issues/23621)仅在23.05.3中出现，自23.05.4后官方就修复了。
+[因libpfring导致的编译失败](https://github.com/openwrt/packages/issues/23621)仅在23.05.3中出现，自23.05.4起官方就修复了。
 
 `CONFIG_PACKAGE_luci-proto-bonding=y`的前提是`CONFIG_PACKAGE_kmod-tls=y`否则只能`=m`。
 
