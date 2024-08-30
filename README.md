@@ -10,7 +10,7 @@
 
 ~~预集成[LuCI support for Turbo ACC (SFE)](https://github.com/lllrrr/luci-app-sfe)和[shortcut-fe](https://git.codelinaro.org/clo/qsdk/oss/lklm/shortcut-fe/-/tree/697977d8d0ccf0ab596e5692d08608a75dd7f33d)，源码摘自[coolsnowwolf](https://github.com/coolsnowwolf/lede)，开启shortcut-fe对小包转发有很大提升[与ros不分秋色](https://www.youtube.com/watch?v=ATTCCnTEqH0)，至于[bbr](https://aws.amazon.com/cn/blogs/china/talking-about-network-optimization-from-the-flow-control-algorithm/)在[长肥网络](https://cloud.tencent.com/developer/article/1383232)中开启才会有明显提升。~~ 被[网络->防火墙->常规设置->路由/NAT 分载->软件流量分载](https://blog.csdn.net/dog250/article/details/103422860)替代，多核cpu启用[网络->接口->全局网络选项->数据包引导](https://openwrt.org/docs/guide-user/advanced/load_balancing_-_tuning_smp_irq)可能有助于网络速度。
 
-因硬件从2.5g过渡至万兆，已换回ros系统，自23.05.4后停止更新。
+因硬件从2.5g过渡至10g，已换回ros系统，自23.05.4后停止更新。
 
 # Actions-OpenWrt
 
